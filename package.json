@@ -1,0 +1,24 @@
+{
+  "name": "tests_1",
+  "version": "1.0.0",
+  "description": "Automated testing with TestCafe",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome ./tests",
+    "test:chrome:headless": "testcafe chrome:headless ./tests",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iphone X ./tests",
+    "test:firefox": "testcafe firefox ./tests",
+    "test:firefox:headless": "testcafe firefox:headless ./tests"
+  },
+  "keywords": [
+    "Testcafe",
+    "testing",
+    "automation"
+  ],
+  "author": "MF",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^2.0.5",
+    "testcafe": "^1.8.6"
+  }
+}

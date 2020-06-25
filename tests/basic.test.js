@@ -28,7 +28,7 @@ test('search testcontroller', async t => {
     
     await t.expect(article_text).contains("A test controller object exposes the test API's methods.")
 })
-test.skip('search Configuration', async t => {
+test('search Configuration', async t => {
     //we can also use 'only' in previous test
     const search_icon = Selector('#search-icon')
     const search_input = Selector('#search')
@@ -39,4 +39,18 @@ test.skip('search Configuration', async t => {
     await t.pressKey('enter')   
     
     await t.expect(article_text).contains("configuration file can include the following settings:")
+})
+test('check color', async t => {
+    const button = Selector('.get-started-button')
+
+    await t.hover(button) 
+    
+    await t.expect(Selector(button).getStyleProperty('color')).eql('rgb(64, 65, 66)');
+})
+test('check button visibility', async t => {
+    const studio_button = Selector('#studio-link-tab')
+
+    await t.hover(studio_button) 
+    
+    await t.expect(Selector(studio_button, {visibilityCheck: true}).exists).ok();
 })

@@ -10,6 +10,7 @@ fixture `Getting started with TestCafe documentation`
     .beforeEach(async t => {
         //change speed for all tests in file
         await t.setTestSpeed(1)
+        await t.setPageLoadTimeout(0)
     })
 test('search testcontroller', async t => {
     //change speed for 1 test: 1 - default speed, 0.1 is helpfull for debugging
@@ -26,4 +27,16 @@ test('search testcontroller', async t => {
     await t.pressKey('enter')   
     
     await t.expect(article_text).contains("A test controller object exposes the test API's methods.")
+})
+test.skip('search Configuration', async t => {
+    //we can also use 'only' in previous test
+    const search_icon = Selector('#search-icon')
+    const search_input = Selector('#search')
+    const article_text = Selector('.post-content').innerText
+
+    await t.click(search_icon)
+    await t.typeText(search_input, "Configuration")
+    await t.pressKey('enter')   
+    
+    await t.expect(article_text).contains("configuration file can include the following settings:")
 })

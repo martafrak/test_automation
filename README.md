@@ -1,4 +1,4 @@
-# Python Course 
+# Test automation 
 > testcafe research & exercise
 
 ## Table of contents

@@ -12,7 +12,7 @@ fixture `Getting started with TestCafe documentation`
         await t.setTestSpeed(1)
         await t.setPageLoadTimeout(0)
     })
-test('search testcontroller', async t => {
+test.skip('search testcontroller', async t => {
     //change speed for 1 test: 1 - default speed, 0.1 is helpfull for debugging
     //await t.setTestSpeed(1)
     //await t.wait(4000)
@@ -28,7 +28,7 @@ test('search testcontroller', async t => {
     
     await t.expect(article_text).contains("A test controller object exposes the test API's methods.")
 })
-test('search Configuration', async t => {
+test.skip('search Configuration', async t => {
     //we can also use 'only' in previous test
     const search_icon = Selector('#search-icon')
     const search_input = Selector('#search')
@@ -40,14 +40,14 @@ test('search Configuration', async t => {
     
     await t.expect(article_text).contains("configuration file can include the following settings:")
 })
-test('check color', async t => {
+test.skip('check color', async t => {
     const button = Selector('.get-started-button')
 
     await t.hover(button) 
     
     await t.expect(Selector(button).getStyleProperty('color')).eql('rgb(64, 65, 66)');
 })
-test('check button visibility', async t => {
+test.skip('check button visibility', async t => {
     const studio_button = Selector('#studio-link-tab')
 
     await t.hover(studio_button) 

@@ -13,7 +13,7 @@ test.skip("Login with invalid credentials", async t => {
 
     await t.click(signInButton)
     await t.typeText(emailInput, 'marta@test.com', {paste: true})
-    await t. typeText(passwordInput, 'test123')
+    await t.typeText(passwordInput, 'test123')
     await t.click(submitButton)
 
     await t.expect(alertMessage).contains('Authentication failed.')

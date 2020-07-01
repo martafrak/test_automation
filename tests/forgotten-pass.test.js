@@ -4,7 +4,7 @@ import { Selector } from 'testcafe'
 fixture `Send new password test`
     .page `http://automationpractice.com/`
 
-test.skip("Not send new password for invalid email test", async t => {
+test("Not send new password for invalid email test", async t => {
     const signInButton =  Selector('.login')
     const linkToForgottenPass = Selector("a").withText('Forgot your password?')
     const emailInput = Selector('#email')

@@ -9,12 +9,12 @@ test.before(async t => {
     await login('testtime@test.com', 'Test123')
 })("Add product to cart", async t => {
     const searchInput = Selector('#search_query_top')
-    const linkToAddToCart = Selector("a").withText('Add to cart')
+    const AddToCartButton = Selector("a.button.ajax_add_to_cart_button.btn.btn-default")
     const info = Selector('#layer_cart').innerText
 
     await t.typeText(searchInput, 'Blouse', {paste: true})
     await t.pressKey('enter')
-    await t.click(linkToAddToCart)
+    await t.click(AddToCartButton)
 
     await t
         .expect(info)

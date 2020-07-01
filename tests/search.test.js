@@ -4,7 +4,7 @@ import { Selector } from 'testcafe'
 fixture `Search product test`
     .page `http://automationpractice.com/`
 
-test("Search invalid product", async t => {
+test.skip("Search invalid product", async t => {
     const searchInput = Selector('#search_query_top')
     const alertWarning = Selector('#center_column').innerText
 
@@ -14,7 +14,7 @@ test("Search invalid product", async t => {
     await t.expect(alertWarning).contains('No results were found for your search')
 })
 
-test("Search product", async t => {
+test.skip("Search product", async t => {
     const searchInput = Selector('#search_query_top')
     const productBox = Selector('.product-container')
 

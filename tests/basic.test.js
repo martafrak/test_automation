@@ -1,4 +1,5 @@
 import { Selector } from 'testcafe'
+import xPathToCss from 'xpath-to-css'
 
 //prettier-ignore
 fixture `Getting started with TestCafe documentation`
@@ -16,7 +17,8 @@ test('search testcontroller', async t => {
     //change speed for 1 test: 1 - default speed, 0.1 is helpfull for debugging
     //await t.setTestSpeed(1)
     //await t.wait(4000)
-    const search_icon = Selector('#search-icon')
+    const search_icon_xpath = `//*[@id="search-icon"]`
+    const search_icon = xPathToCss(search_icon_xpath)
     const search_input = Selector('#search')
     const article_text = Selector('.post-content').innerText
 

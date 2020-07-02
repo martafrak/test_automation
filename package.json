@@ -23,5 +23,8 @@
   "dependencies": {
     "prettier": "^2.0.5",
     "testcafe": "^1.8.6"
+  },
+  "devDependencies": {
+    "xpath-to-css": "^1.0.5"
   }
 }

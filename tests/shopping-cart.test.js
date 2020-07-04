@@ -13,8 +13,7 @@ fixture `Add product to cart`
 test.before(async t => {
     await login('testtime@test.com', 'Test123')
 })("Add product to cart", async t => {
-    await t.typeText(nav.searchInput, 'Blouse', {paste: true})
-    await t.pressKey('enter')
+    nav.search('Blouse')
     await t.click(product.addToCartButton)
 
     await t

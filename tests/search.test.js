@@ -10,8 +10,7 @@ fixture `Search product test`
     .page `http://automationpractice.com/`
 
 test("Search invalid product", async t => {
-    await t.typeText(nav.searchInput, 'red dress', {paste: true})
-    await t.pressKey('enter')
+    nav.search('red dress')
 
     await t
         .expect((product.alertWarning).innerText)
@@ -19,8 +18,7 @@ test("Search invalid product", async t => {
 })
 
 test("Search product", async t => {
-    await t.typeText(nav.searchInput, 'Blouse', {paste: true})
-    await t.pressKey('enter')
+    nav.search('Blouse')
 
     await t.expect(product.productBox.exists).ok()
 })

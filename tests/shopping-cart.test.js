@@ -1,5 +1,10 @@
 import { Selector } from 'testcafe'
 import { login } from '../helper'
+import Nav from '../POM/components/Nav'
+import Product from '../POM/components/Product'
+
+const nav = new Nav()
+const product = new Product()
 
 // prettier-ignore
 fixture `Add product to cart`
@@ -8,15 +13,11 @@ fixture `Add product to cart`
 test.before(async t => {
     await login('testtime@test.com', 'Test123')
 })("Add product to cart", async t => {
-    const searchInput = Selector('#search_query_top')
-    const AddToCartButton = Selector("a.button.ajax_add_to_cart_button.btn.btn-default")
-    const info = Selector('#layer_cart').innerText
-
-    await t.typeText(searchInput, 'Blouse', {paste: true})
+    await t.typeText(nav.searchInput, 'Blouse', {paste: true})
     await t.pressKey('enter')
-    await t.click(AddToCartButton)
+    await t.click(product.addToCartButton)
 
     await t
-        .expect(info)
+        .expect((product.info).innerText)
         .contains('Product successfully added to your shopping cart')
 })

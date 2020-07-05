@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe'
 import { login } from '../helper'
-import Form from '../POM/components/Form'
+import Form from '../POM/pages/Form'
 
 const form = new Form()
 

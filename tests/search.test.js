@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe'
 import Nav from '../POM/components/Nav'
-import Product from '../POM/components/Product'
+import Product from '../POM/pages/Product'
 
 const nav = new Nav()
 const product = new Product()

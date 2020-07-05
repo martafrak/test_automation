@@ -1,7 +1,7 @@
 import { Selector } from 'testcafe'
 import { login } from '../helper'
 import Nav from '../POM/components/Nav'
-import Product from '../POM/components/Product'
+import Product from '../POM/pages/Product'
 
 const nav = new Nav()
 const product = new Product()

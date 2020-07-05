@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe'
 import Nav from '../POM/components/Nav'
-import Form from '../POM/components/Form'
+import Form from '../POM/pages/Form'
 
 const nav = new Nav()
 const form = new Form()

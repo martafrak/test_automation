@@ -13,7 +13,7 @@ test("Search invalid product", async t => {
     nav.search('red dress')
 
     await t
-        .expect((product.alertWarning).innerText)
+        .expect(product.alertWarning.innerText)
         .contains('No results were found for your search')
 })
 

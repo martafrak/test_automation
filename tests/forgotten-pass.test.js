@@ -16,6 +16,6 @@ test("Not send new password for invalid email test", async t => {
     await t.pressKey('enter')
 
     await t
-        .expect((form.alertMessage).innerText)
+        .expect(form.alertMessage.innerText)
         .contains('There is no account registered for this email address.')
 })

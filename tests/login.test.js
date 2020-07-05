@@ -18,7 +18,7 @@ test("Login with invalid credentials", async t => {
     loginPage.loginToApp('marta@test.com', 'Test123')
 
     await t
-        .expect((form.alertMessage).innerText)
+        .expect(form.alertMessage.innerText)
         .contains('Authentication failed.')
 })
 
@@ -28,6 +28,6 @@ test("Login with valid credentials", async t => {
     loginPage.loginToApp('testtime@test.com', 'Test123')
 
     await t
-        .expect((form.infoAccount).innerText)
+        .expect(form.infoAccount.innerText)
         .contains('Welcome to your account.')
 })

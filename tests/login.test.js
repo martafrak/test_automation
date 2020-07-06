@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe'
-//import { login } from '../helper'
 import LoginPage from '../POM/pages/LoginPage'
 import Form from '../POM/pages/Form'
 import Nav from '../POM/components/Nav'
@@ -13,7 +12,6 @@ fixture `Login Test`
     .page `http://automationpractice.com/`
 
 test("Login with invalid credentials", async t => {
-    //await login('marta@test.com', 'Test123')
     await t.click(nav.signInButton)
     loginPage.loginToApp('marta@test.com', 'Test123')
 
@@ -23,7 +21,6 @@ test("Login with invalid credentials", async t => {
 })
 
 test("Login with valid credentials", async t => {
-    //await login('testtime@test.com', 'Test123')
     await t.click(nav.signInButton)
     loginPage.loginToApp('testtime@test.com', 'Test123')
 

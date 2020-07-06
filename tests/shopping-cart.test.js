@@ -1,5 +1,4 @@
 import { Selector } from 'testcafe'
-//import { login } from '../helper'
 import LoginPage from '../POM/pages/LoginPage'
 import Nav from '../POM/components/Nav'
 import Product from '../POM/pages/Product'
@@ -12,11 +11,9 @@ const product = new Product()
 fixture `Add product to cart`
     .page `http://automationpractice.com/`
 
-//test.before(async t => {
 test("Add product to cart", async t => {
     await t.click(nav.signInButton)
     loginPage.loginToApp('testtime@test.com', 'Test123')
-    //await login('testtime@test.com', 'Test123')
     nav.search('Blouse')
     await t.click(product.addToCartButton)
 
